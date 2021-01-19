@@ -4,10 +4,15 @@
 
 :root{
     --main-red-color: #e06262;
+    --main-black-color: #484848;
 }
 
 .main-red-color{
     color: var(--main-red-color);
+}
+
+.main-black-color{
+    color: var(--main-black-color);
 }
 
 html{
@@ -33,16 +38,17 @@ body{
 
 .container{
     width: 600px;
-    height: 800px;
+    height: 600px;
     background-color: #f2eecb;
     border-radius: 4px;
     padding: 32px;
 }
 .frame{
-    border: 1px solid #484848;
+    border: 1px solid var(--main-black-color);
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .header{
@@ -57,6 +63,7 @@ body{
     font-size: 3.6rem;
     font-family: "homemade Apple", sans-serif;
     text-transform: lowercase;
+    color: var(--main-black-color);
 }
 
 .header-button{
@@ -69,6 +76,14 @@ body{
     background: unset;
     outline: unset;
     cursor: pointer;
+}
+
+.header-button.main-red-color:active{
+    text-shadow: 1px 1px 2px var(--main-red-color);
+}
+
+.header-button.main-black-color:active{
+    text-shadow: 1px 1px 2px var(--main-black-color);
 }
 
 .add{
@@ -98,11 +113,36 @@ body{
 .add-btn{
     font-size: 1.8rem;
     font-family: "Bungee", sans-serif;
+    padding: 16px;
 
-    padding: 16px unset unset 16px;
     cursor: pointer;
 
     background: unset;
     border: unset;
     outline: unset;
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+}
+
+.todo{
+    position: relative;
+
+    flex: 1 0 auto;
+    text-align: center;
+
+    min-height: 34px;
+    margin: 16px 0 0;
+    font-family: "Homemade Apple", sans-serif;
+    font-size: 24px;
+
+    border-bottom: 1px solid var(--main-red-color);
+}
+
+.todo-list{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
